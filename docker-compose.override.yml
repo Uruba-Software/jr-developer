@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      target: development
+    volumes:
+      - .:/var/www/html
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+
+  horizon:
+    build:
+      target: development
+
+  mysql:
+    ports:
+      - '${DB_PORT_FORWARD:-3306}:3306'
+
+  redis:
+    ports:
+      - '${REDIS_PORT_FORWARD:-6379}:6379'
