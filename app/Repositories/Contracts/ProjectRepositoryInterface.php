@@ -9,7 +9,7 @@ interface ProjectRepositoryInterface
 {
     public function findById(int $id): ?Project;
 
-    public function findBySlug(string $slug): ?Project;
+    public function findBySlug(string $slug, ?int $userId = null): ?Project;
 
     public function allForUser(int $userId): Collection;
 
