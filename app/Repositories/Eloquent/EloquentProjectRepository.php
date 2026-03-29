@@ -13,9 +13,11 @@ class EloquentProjectRepository implements ProjectRepositoryInterface
         return Project::find($id);
     }
 
-    public function findBySlug(string $slug): ?Project
+    public function findBySlug(string $slug, ?int $userId = null): ?Project
     {
-        return Project::where('slug', $slug)->first();
+        return Project::where('slug', $slug)
+            ->when($userId !== null, fn ($q) => $q->where('user_id', $userId))
+            ->first();
     }
 
     public function allForUser(int $userId): Collection
