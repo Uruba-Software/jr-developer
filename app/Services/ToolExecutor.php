@@ -74,6 +74,11 @@ class ToolExecutor
         return in_array($runner->permission(), self::AUTO_APPROVED);
     }
 
+    public function registry(): ToolRegistry
+    {
+        return $this->registry;
+    }
+
     /**
      * Check if a tool is permanently blocked.
      */
