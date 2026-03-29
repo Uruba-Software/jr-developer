@@ -1,18 +1,21 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "uruba/jr-developer",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Self-hosted, messaging-driven AI development assistant.",
+    "keywords": ["ai", "developer", "assistant", "slack", "discord", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^12.0",
+        "laravel/horizon": "^5.31",
         "laravel/sanctum": "^4.3",
         "laravel/tinker": "^2.10.1",
         "predis/predis": "^3.4",
-        "prism-php/prism": "^0.99.21"
+        "prism-php/prism": "^0.99.21",
+        "spatie/laravel-data": "^4.15",
+        "spatie/laravel-permission": "^6.17"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
