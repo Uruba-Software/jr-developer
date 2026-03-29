@@ -31,8 +31,20 @@ return [
     'slack' => [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
-            'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+            'channel'              => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+        'bot_token'  => env('SLACK_BOT_TOKEN'),
+        'channel_id' => env('SLACK_CHANNEL_ID'),
+    ],
+
+    'github' => [
+        'token' => env('GITHUB_TOKEN'),
+    ],
+
+    'jira' => [
+        'url'       => env('JIRA_URL'),
+        'username'  => env('JIRA_USERNAME'),
+        'api_token' => env('JIRA_API_TOKEN'),
     ],
 
 ];
