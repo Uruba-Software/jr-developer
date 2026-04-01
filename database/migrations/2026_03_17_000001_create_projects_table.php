@@ -13,7 +13,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('slug');
+            $table->unique(['user_id', 'slug']);
             $table->text('description')->nullable();
             $table->string('repository_url')->nullable();
             $table->string('local_path')->nullable();
