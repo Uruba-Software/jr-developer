@@ -17,8 +17,8 @@ class SlackAdapter implements MessagingPlatform
 
     public function __construct()
     {
-        $this->botToken      = config('jr.platforms.slack.bot_token', '');
-        $this->signingSecret = config('jr.platforms.slack.signing_secret', '');
+        $this->botToken      = config('jr.platforms.slack.bot_token') ?? '';
+        $this->signingSecret = config('jr.platforms.slack.signing_secret') ?? '';
     }
 
     public function sendMessage(string $channel, string $text): void
