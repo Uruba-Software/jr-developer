@@ -23,11 +23,13 @@ class Project extends Model
         'local_path',
         'default_branch',
         'operating_mode',
+        'config',
         'is_active',
     ];
 
     protected $casts = [
         'operating_mode' => OperatingMode::class,
+        'config'         => 'array',
         'is_active'      => 'boolean',
     ];
 
