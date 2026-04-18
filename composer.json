@@ -15,7 +15,8 @@
         "predis/predis": "^3.4",
         "prism-php/prism": "^0.99.21",
         "spatie/laravel-data": "^4.15",
-        "spatie/laravel-permission": "^6.17"
+        "spatie/laravel-permission": "^6.17",
+        "tightenco/ziggy": "^2.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

@@ -19,6 +19,14 @@ class ProjectService
         return $this->projects->allForUser($user->id);
     }
 
+    public function updateRules(Project $project, string $rules): Project
+    {
+        $config = $project->config ?? [];
+        $config['ai_rules'] = $rules;
+
+        return $this->projects->update($project, ['config' => $config]);
+    }
+
     public function create(User $user, array $data): Project
     {
         return $this->projects->create([
