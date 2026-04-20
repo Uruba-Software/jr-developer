@@ -21,7 +21,7 @@
                 </Link>
             </nav>
 
-            <div class="px-3 py-4 border-t border-gray-700">
+            <div class="px-3 py-4 border-t border-gray-700 space-y-1">
                 <Link
                     :href="route('setup')"
                     class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:bg-gray-800 hover:text-white transition-colors"
@@ -29,6 +29,13 @@
                     <WrenchScrewdriverIcon class="w-4 h-4" />
                     Setup Wizard
                 </Link>
+                <button
+                    class="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:bg-gray-800 hover:text-red-400 transition-colors"
+                    @click="logout"
+                >
+                    <ArrowRightOnRectangleIcon class="w-4 h-4" />
+                    Sign out
+                </button>
             </div>
         </aside>
 
@@ -67,12 +74,13 @@
 </template>
 
 <script setup>
-import { Link, usePage } from '@inertiajs/vue3';
+import { Link, router, usePage } from '@inertiajs/vue3';
 import {
     Squares2X2Icon,
     FolderIcon,
     Cog6ToothIcon,
     WrenchScrewdriverIcon,
+    ArrowRightOnRectangleIcon,
 } from '@heroicons/vue/24/outline';
 
 defineProps({
@@ -89,5 +97,9 @@ const navItems = [
 
 function isActive(routeName) {
     return page.url.startsWith('/' + routeName.replace('.index', '').replace('.', '/'));
+}
+
+function logout() {
+    router.post(route('logout'));
 }
 </script>
