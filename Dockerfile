@@ -1,11 +1,12 @@
 FROM php:8.4-fpm-alpine AS base
 
 RUN apk add --no-cache \
-    git curl zip unzip bash \
-    libpng-dev libjpeg-dev freetype-dev \
+    git curl zip unzip bash autoconf g++ make \
+    libpng-dev libjpeg-turbo-dev freetype-dev \
     oniguruma-dev libxml2-dev
 
-RUN docker-php-ext-install \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
+    docker-php-ext-install \
     pdo_mysql mbstring exif pcntl bcmath gd xml
 
 RUN pecl install redis && docker-php-ext-enable redis

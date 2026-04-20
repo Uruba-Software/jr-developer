@@ -11,11 +11,3 @@ services:
   horizon:
     build:
       target: development
-
-  mysql:
-    ports:
-      - '${DB_PORT_FORWARD:-3306}:3306'
-
-  redis:
-    ports:
-      - '${REDIS_PORT_FORWARD:-6379}:6379'
